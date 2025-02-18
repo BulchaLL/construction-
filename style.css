@@ -310,7 +310,7 @@ body {
 }
 /* Responsive Styles */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero, .about, .services, .projects, .contact{
     padding-left: 10px;
     padding-right: 10px;
