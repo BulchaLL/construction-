@@ -1,0 +1,399 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.logo{
+  color: #ffd900;
+  direction: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.cta-btn {
+  background-color: #ffd900;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.cta-btn:hover {
+  background-color: #ffd900;
+
+}
+
+
+
+/* Header Styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar .nav-links li {
+  display: inline;
+}
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+/* Hero Section Styles */
+.hero {
+  padding-left: 120px;
+  padding-right: 120px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+  color: #fff;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-slides {
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideShow 15s infinite;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.slide:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.explore-btn, .read-more-btn, .contact-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #fdd909;
+  color: #111111;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.explore-btn:hover, .read-more-btn:hover, .contact-btn:hover {
+  background-color: #111111;
+  color: #fdd909;
+  border: 1px solid #fdd909;
+}
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+.hero p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* About Section Styles */
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  gap: 20px;
+  padding: 40px 120px;
+  
+}
+.about img {
+  flex: 1;
+  width: 90%;
+  height: 70vh;
+  transform: scaleX(-1);
+}
+.about .img img {
+  width: 100%;
+  height: 100vh;
+}
+.about .text {
+  flex: 1;
+}
+.about .text h2 {
+  font-size: 2rem;
+}
+.about .text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+/* Services Section Styles */
+.services {
+  padding: 40px 120px;
+}
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  
+}
+.service {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s;
+  
+}
+.service h3 {
+  font-size: 1.5rem;
+}
+.service p {
+  font-size: 1rem;
+}
+
+/* Projects Section Styles */
+.projects {
+  padding: 40px 120px;
+}
+.projects h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.project-gallery img {
+  width: 100%;
+  height: 70vh;
+  max-width: 300px;
+}
+
+/* Contact Section Styles */
+.contact{
+  padding: 40px 120px;
+
+}
+.contact .address {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-text{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.contact .containerr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  width: 100%;
+
+
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact form textarea {
+  height: 100px;
+}
+.contact form button {
+  border: none;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute; /* Add this line */
+   right: 10px; 
+   
+}
+/* Responsive Styles */
+
+@media (max-width: 480px) {
+  .hero, .about, .services, .projects, .contact{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .menu-toggle {
+    font-size: 2rem;
+    display: block;
+    color: #fff;
+    z-index: 6;
+}
+.navbar .nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-bar ul.active {
+ display: flex;
+ background: #333;
+ height: 100vh; /* Increase the height */
+ width: 60%; /* Decrease the width */
+ right: 0; /* Align to the right */
+ left: auto; /* Reset left alignment */
+ top: 0;
+ z-index: 5;
+ align-items:flex-start;
+ gap: 40px;
+ margin-top: 45px;
+ 
+}
+  
+  .cta-btn{
+    display: none;
+  }
+  .hero{
+    height: 100vh;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.875rem;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .about{
+    display: block;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .about img{
+    width: 100%;
+    height: auto;
+  }
+  .service{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-gallery {
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+   .container{
+    display: block;
+    align-items: center;
+  }
+
+  .contact .containerr {
+    display: block;
+  }
+
+}
