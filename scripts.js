@@ -13,6 +13,8 @@ document.getElementById("menuToggle").addEventListener("click", function() {
 document.addEventListener('click', (event) => {
   if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
     navbar.classList.remove('active');
+    menuIcon.classList.remove('close-icon'); // Reset to menu icon when closed
+  }
   }
 });
 });
