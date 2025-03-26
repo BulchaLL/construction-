@@ -30,7 +30,7 @@ document.addEventListener('click', (event) => {
     currentSlide = (currentSlide + 1) % slides.length;
   }
 
-  setInterval(showSlide, 5000);
+  setInterval(showSlide, 1000);
 
 // Smooth Scrolling
   document.querySelectorAll("a[href^='#']").forEach(anchor => {
