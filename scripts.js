@@ -9,13 +9,6 @@ document.getElementById("menuToggle").addEventListener("click", function() {
   navbar.classList.toggle("active");
   menuIcon.style.display = menuIcon.style.display === "none" ? "block" : "none";
   closeIcon.style.display = closeIcon.style.display === "none" ? "block" : "none";
-  // Close menu when clicking outside the nav list
-document.addEventListener('click', (event) => {
-  if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
-    navbar.classList.remove('active');
-   }
-  })
-});
 });
 
   
@@ -30,7 +23,7 @@ document.addEventListener('click', (event) => {
     currentSlide = (currentSlide + 1) % slides.length;
   }
 
-  setInterval(showSlide, 1000);
+  setInterval(showSlide, 5000);
 
 // Smooth Scrolling
   document.querySelectorAll("a[href^='#']").forEach(anchor => {
