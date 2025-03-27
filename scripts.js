@@ -14,7 +14,7 @@ document.addEventListener('click', (event) => {
   if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
     navbar.classList.remove('active');
    }
-  }
+  })
 });
 });
 
