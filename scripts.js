@@ -2,13 +2,26 @@ window.addEventListener("scroll", () => {
   const navbar = document.querySelector("header");
   navbar.classList.toggle("sticky", window.scrollY > 50);
 });
-document.getElementById("menuToggle").addEventListener("click", function() {
-  const navbar = document.querySelector(".nav-bar ul");
-  const menuIcon = document.querySelector(".bx-menu");
-  const closeIcon = document.querySelector(".bx-x");
-  navbar.classList.toggle("active");
-  menuIcon.style.display = menuIcon.style.display === "none" ? "block" : "none";
-  closeIcon.style.display = closeIcon.style.display === "none" ? "block" : "none";
+const navbar = document.querySelector(".navbar ul");
+const menuIcon = document.querySelector(".bx-menu");
+const navlnk = document.querySelectorAll(".navlnk");
+menuIcon.addEventListener("click", function() {
+    navbar.classList.toggle("active");
+});
+
+
+navlnk.forEach(lnk => {
+lnk.addEventListener("click", 
+    () => {
+        navbar.classList.remove("active"); 
+    }
+)
+});
+document.addEventListener("click", function(event) {
+if (event.target.closest(".navbar") === null && event.target !== menuIcon) {
+  navbar.classList.remove("active");
+}
+
 });
 
   
