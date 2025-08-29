@@ -293,6 +293,13 @@ body {
   width: 100%;
   max-width: 520px;
 }
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #141414;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 
 /* Footer Styles */
 .footer {
@@ -397,3 +404,4 @@ body {
   }
 
 }
+
