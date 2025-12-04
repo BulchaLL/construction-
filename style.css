@@ -5,7 +5,7 @@ body {
 }
 .logo{
   color: #ffd900;
-  direction: none;
+  
 }
 
 .container {
@@ -14,6 +14,7 @@ body {
 }
 .cta-btn {
   background-color: #ffd900;
+  font-weight: 600;
   color: #333;
   padding: 10px 20px;
   text-decoration: none;
@@ -52,10 +53,15 @@ body {
 }
 .navbar .nav-links li {
   display: inline;
+   transition: 0.5s;
 }
 .navbar .nav-links a {
   color: #fff;
   text-decoration: none;
+ 
+}
+.nav-links li:hover{
+  transform: scale(1.2);
 }
 
 
@@ -64,7 +70,7 @@ body {
 .hero {
   padding-left: 120px;
   padding-right: 120px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
   color: #fff;
   height: 90vh;
   position: relative;
@@ -136,8 +142,9 @@ body {
   text-align: center;
   color: #fff;
 }
-.explore-btn, .read-more-btn, .contact-btn {
+.explore-btn,  .contact-btn {
   display: inline-block;
+  font-weight: 600;
   padding: 12px 20px;
   background-color: #fdd909;
   color: #111111;
@@ -190,7 +197,41 @@ body {
 .about .text p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  
 }
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #fdd909;
+}
+
+.stat-box {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+  border-left: 1px solid #fdd909;
+
+}
+
+.counter {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fdd909; 
+}
+
+.plus {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.stat-box p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
 
 /* Services Section Styles */
 .services {
@@ -201,17 +242,14 @@ body {
   font-size: 2rem;
 }
 .service-list {
-  display: flex;
-  flex-wrap: wrap;
+ display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   justify-content: center;
 
   
 }
 .service {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -235,15 +273,61 @@ body {
   font-size: 2rem;
 }
 .project-gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
   justify-content: center;
+  width: 100%;
+}
+.proj-card{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  gap: 10px;
+  padding: 15px;
+  border: 1px, solid, rgb(179, 177, 177);
+  border-radius: 12px;
+  height: 100%;
 }
 .project-gallery img {
   width: 100%;
-  height: 70vh;
-  max-width: 300px;
+  height: 150px;
+ 
+}
+.title{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.adrress{
+  font-size: 14px;
+}
+.spn{
+  font-weight: 700;
+}
+#lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox-img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+#lightbox .close{
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Contact Section Styles */
@@ -291,7 +375,7 @@ body {
 .contact form button {
   border: none;
   width: 100%;
-  max-width: 520px;
+  max-width: 500px;
 }
 .input {
   width: 100%;
@@ -311,17 +395,23 @@ body {
 .menu-toggle {
   display: none;
   cursor: pointer;
-  position: absolute; /* Add this line */
+  position: absolute; 
    right: 10px; 
    
 }
 /* Responsive Styles */
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .hero, .about, .services, .projects, .contact{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
+  
+  .navbar .logo {
+  font-size: 1rem;
+  font-weight: 600;
+}
+  
   .menu-toggle {
     font-size: 2rem;
     display: block;
@@ -343,10 +433,115 @@ body {
 .nav-bar ul.active {
  display: flex;
  background: #333;
- height: 100vh; /* Increase the height */
- width: 60%; /* Decrease the width */
- right: 0; /* Align to the right */
- left: auto; /* Reset left alignment */
+ height: 100vh; 
+ width: 60%; 
+ right: 0; 
+ left: auto;
+ top: 0;
+ z-index: 5;
+ align-items:flex-start;
+ gap: 40px;
+ margin-top: 45px;
+ 
+}
+  
+  .cta-btn{
+    display: none;
+  }
+  .hero{
+    height: 100vh;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.875rem;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .explore-btn,  .contact-btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+  .about{
+    display: block;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .about img{
+    width: 100%;
+    height: auto;
+  }
+  .services{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .service-list{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+ 
+  .project-gallery {
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 50px;
+  }
+   .container{
+    display: block;
+    align-items: center;
+  }
+
+  .contact .containerr {
+    display: block;
+  }
+
+}
+
+@media (min-width: 481px ) and ( max-width: 768px) {
+  .hero, .about, .services, .projects, .contact{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .navbar .logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+  
+  .menu-toggle {
+    font-size: 2rem;
+    display: block;
+    color: #fff;
+    z-index: 6;
+}
+.navbar .nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-bar ul.active {
+ display: flex;
+ background: #333;
+ height: 100vh; 
+ width: 60%; 
+ right: 0; 
+ left: auto; 
  top: 0;
  z-index: 5;
  align-items:flex-start;
@@ -386,12 +581,16 @@ body {
     padding-right: 0;
   }
   .service-list {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     align-items: center;
+    justify-content: center;
   }
   .project-gallery {
-    left: 0;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
     align-items: center;
   }
    .container{
@@ -404,4 +603,5 @@ body {
   }
 
 }
+
 
