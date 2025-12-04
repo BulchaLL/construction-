@@ -441,6 +441,7 @@ body {
  z-index: 5;
  align-items:flex-start;
  gap: 40px;
+ padding-top: 50px;
  margin-top: 0;
 }
   
@@ -602,6 +603,7 @@ body {
   }
 
 }
+
 
 
 
