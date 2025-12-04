@@ -4,9 +4,17 @@ window.addEventListener("scroll", () => {
 });
 const navbar = document.querySelector(".navbar ul");
 const menuIcon = document.querySelector(".bx-menu");
+const closeIcon = document.querySelector(".bx-x");
 const navlnk = document.querySelectorAll(".navlnk");
 menuIcon.addEventListener("click", function() {
     navbar.classList.toggle("active");
+    menuIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+});
+closeIcon.addEventListener("click", function() {
+    navbar.classList.remove("active");
+    closeIcon.style.display = 'none';
+    menuIcon.style.display = 'block';
 });
 
 
@@ -14,12 +22,16 @@ navlnk.forEach(lnk => {
 lnk.addEventListener("click", 
     () => {
         navbar.classList.remove("active"); 
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'block';
     }
 )
 });
 document.addEventListener("click", function(event) {
 if (event.target.closest(".navbar") === null && event.target !== menuIcon) {
   navbar.classList.remove("active");
+  closeIcon.style.display = 'none';
+  menuIcon.style.display = 'block';
 }
 
 });
@@ -47,19 +59,61 @@ if (event.target.closest(".navbar") === null && event.target !== menuIcon) {
         });
       });
     });
+const counters = document.querySelectorAll('.counter');
+const speed = 150;
 
-    document.getElementById("readMoreBtn").addEventListener("click", function() {
-      const moreText = document.getElementById("moreText");
-      const btn = document.getElementById("readMoreBtn");
+const startCounting = () => {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
 
-      if (moreText.style.display === "none") {
-          moreText.style.display = "inline";
-          btn.textContent = "Read Less";
+      const inc = target / speed;
 
-      } else{
-          moreText.style.display = "none";
-          btn.textContent = "Read More";
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 15);
+      } else {
+        counter.innerText = target;
       }
+    };
+
+    updateCount();
+  });
+};
+
+let started = false;
+
+window.addEventListener('scroll', () => {
+  const statsTop = document.querySelector('.about-stats').offsetTop;
+  const scrollPos = window.scrollY + window.innerHeight;
+
+  if (scrollPos > statsTop && !started) {
+    startCounting();
+    started = true;
+  }
+});
+
+
+  const images = document.querySelectorAll('.proj-card img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('#lightbox .close');
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  } );
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = 'none';
+    }
   });
 
     // Form Validation
