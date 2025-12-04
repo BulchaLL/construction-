@@ -478,8 +478,8 @@ body {
     height: auto;
   }
   .services{
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .service-list{
@@ -590,6 +590,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
   }
    .container{
@@ -602,6 +604,7 @@ body {
   }
 
 }
+
 
 
 
